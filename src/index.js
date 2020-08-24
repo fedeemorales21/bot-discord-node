@@ -49,6 +49,11 @@ const execute = async (message, serverQueue) => {
         )
     }
 
+    if (args[1] == '') {
+        return message.channel.send(
+            "Falta url"
+        )
+    }
     const songInfo = await ytdl.getInfo(args[1])
     const song = {
         title: songInfo.title,
